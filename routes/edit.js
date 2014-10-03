@@ -34,10 +34,12 @@ router.post("/", function(req, res){
 
     //URL suffix should correspond to something that could actually be a post. 
     //Otherwise, when we read it and try to feed it into the database, it breaks.
-    if(!(postid && postid = postid.match(/[0-9|a-f]{24}/))){
+    if(!(postid && postid.match(/[0-9|a-f]{24}/))){
         res.send("Malformed post ID.");
     }else{
-        postid = postid.substring(0,24);
+        postid = postid.match(/[0-9|a-f]{24}/)[0];
+        console.log("POSTID: " + postid);
+        console.log(postid.length);
         var newtext = req.body.content;
 
         var db = req.db;
