@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fritter</title>
+    </head>
+    <body>
+        <h1>Logged in as <%= username %></h1>
+        <a href="/logout">Logout</a>
+
+        <form name="writepost" method="post" action="/writepost">
+            <textarea cols="40" rows="5" name="content"></textarea>
+            <button type="submit">Post</button>
+        </form>
+
+        <% for(var i=0; posts && i<posts.length; i++){%>
+            <div>
+                <%= posts[i].author %> <br/>
+                <%= posts[i].content %> <br/>
+                <%- posts[i].author === username ? ('<a href="edit/' + posts[i]._id.valueOf() + '">Edit</a><br/><a href="del/' + posts[i]._id.valueOf() + '">Delete</a><br/>') : '' %>
+                <br/>
+            </div>
+        <%}%>
+    </body>
+</html>

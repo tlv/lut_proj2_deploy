@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit your post</title>
+    </head>
+    <body>
+        <form name="editpost" method="post" action="/editpost">
+            <textarea cols="40" rows="5" name="content"><%= thepost.content %></textarea>
+            <input type="hidden" name="postid" value=<%= thepost._id.valueOf() %>/>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

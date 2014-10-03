@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up for Fritter</title>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <p id="warning"><%= warning %></p><br/>
+        <form name="adduser" method="post" action="/adduser">
+            <input type="text" placeholder="Username" name="username"/><br/>
+            <input type="password" placeholder="Password" name="password"/><br/>
+            <button type="submit">Sign up</button>
+        </form>
+    </body>
+</html>

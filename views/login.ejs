@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login to Fritter</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <p id="warning"><%= warning %></p>
+        <form name="login" method="post" action="/auth"><br/>
+            <input type="text" placeholder="Username" name="username"/> <br/>
+            <input type="password" placeholder="Password"/ name="password"/> <br/>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="register">Register</a>
+    </body>
+</html>
